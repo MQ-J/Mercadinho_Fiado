@@ -1,37 +1,35 @@
 import java.time.LocalDateTime;
-import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Main {
-  public static void main(String[] args) {
-    
-    Pessoa p = new PessoaFisica("Vagner", "+55 11 9999-9999", 1000.0, "vagner", "123456", 25829749866l, LocalDate.of(1992, 9, 8), "São Paulo - SP");
+	public static void main(String[] args) {
 
-    Acesso a1 = new Acesso(p, LocalDateTime.of(2020,11,5,19,25));
-    a1.setLogout(LocalDateTime.of(2020,11,5,20,32));
-    Acesso a2 = new Acesso(p, LocalDateTime.now());
+		//inicializa array de compras como null (para criar cliente)
+		ArrayList<Compra> compras = null;
 
-    p.getAcessos().add(a1);
-    p.getAcessos().add(a2);
+		//cria cliente
+		Cliente cli = new Cliente("Vagner", "12345678911", "(11) 9999-99999", compras);
 
-    for(Acesso a: p.getAcessos()) {
-      System.out.println("Usuário: " + a.getPessoa().getNome() + " / Login: " + a.getLogin() + " / Logout: " + a.getLogout() + "\n");
-    }
+		//cria produto
+		Produto prod = new Produto(1, "Caixa de leite Itamilk", (float) 5);
+		
+		//inicializa array de produtos e pagamentos como null 
+		//(gambiarra para criar compra, depois tenho q preencher essas listas)
+		ArrayList<Produto> produtos = null;
+		ArrayList<Pagamento> pagamento = null;
+		
+		//cria compra
+		Compra buy = new Compra(LocalDateTime.now(), (float) 5, produtos, cli, pagamento);
+		
+		//cria pagamento (precisa de compra)
+		Pagamento pagto = new Pagamento(LocalDateTime.now(), (float) 5, compras);
 
-    Pessoa p2 = new PessoaJuridica("Instituto Federal de São Paulo", "+55 11 9999-9999", 500000.0, "ifsp-spo", "123456", 61852935000190l, "IFSP");
-
-    Endereco e1 = new Endereco(p2, TipoLogradouro.Rua, "Pedro Vicente", 650, "Canindé", "São Paulo", "SP", "Brasil", 1109010l, true);
-
-    Endereco e2 = new Endereco(p2, TipoLogradouro.Avenida, "XYZ", 1000, "Centro", "São Paulo", "SP", "Brasil", 99999999l, false);
-
-    p2.getEnderecos().add(e1);
-    p2.getEnderecos().add(e2);
-
-    for(Endereco e: p2.getEnderecos()) {
-      System.out.println(e.getTipo() + " " + e.getLogradouro() + ", " + e.getNumero() + ", " + e.getBairro() + "\n" + e.getCidade() + " - " + e.getEstado() + "\n" + "CEP: " + e.getCep() + "\n");
-    }
-    
-    //System.out.println("Nome: " + p.nome);
-    //System.out.println("Nascto: " + ((PessoaFisica)p).getNascimento());
-    //System.out.println(e1.getTipo() + " " + e1.getLogradouro());
-  }
+		System.out.println("Produtos disponiveis: " + prod.getNome());
+		System.out.println("Clientes existentes: " + cli.getNome());
+		System.out.println("O cliente " + cli.getNome() + 
+		" fez uma compra em " + buy.getDataCompra());
+		System.out.println("O cliente " + cli.getNome() + 
+		" pagou a compra de <atrelar pagamento a compra> " +
+		"em " + pagto.getDataPagto());
+	}
 }
