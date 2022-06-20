@@ -6,3 +6,6 @@ https://blog.cod3r.com.br/crud-com-jpa-e-hibernate/
 
 ## Repositórios do MAVEN
 https://mvnrepository.com/
+
+## SERVELET tutorial
+https://www.brandondonnelson.com/2020/06/creating-java-web-app-servlet-in-visual.html
