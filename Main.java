@@ -1,6 +1,8 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import fiado.src.main.java.modelo.Produto;
+
 public class Main {
 	public static void main(String[] args) {
 

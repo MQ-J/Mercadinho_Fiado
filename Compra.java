@@ -1,6 +1,8 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import fiado.src.main.java.modelo.Produto;
+
 public class Compra {
 	protected LocalDateTime dataCompra;
 	protected Float valorPendente;
