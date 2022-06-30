@@ -1,7 +1,9 @@
+package modelo;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-import fiado.src.main.java.modelo.Produto;
+import modelo.Produto;
 
 public class Compra {
 	protected LocalDateTime dataCompra;

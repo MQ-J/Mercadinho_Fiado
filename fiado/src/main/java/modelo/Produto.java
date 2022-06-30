@@ -1,4 +1,4 @@
-package fiado.src.main.java.modelo;
+package modelo;
 
 public class Produto {
 	protected int id;
