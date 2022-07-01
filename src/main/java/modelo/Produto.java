@@ -1,16 +1,15 @@
 package src.main.java.modelo;
 
-@Entity
-@Table(name = "produtos")
+
 public class Produto {
 
-	@Id
+
 	protected int id;
 
-	@Column(length = 255, nullable = false)
+
 	protected String nome;
 
-	@Column(precision=10, scale=2)
+
 	protected Float valor;
 
 	/**

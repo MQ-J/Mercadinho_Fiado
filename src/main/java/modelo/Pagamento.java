@@ -3,8 +3,6 @@ package src.main.java.modelo;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-@Entity
-@Table(name = "pagamentos")
 public class Pagamento {
 	
 	protected LocalDateTime dataPagto;
