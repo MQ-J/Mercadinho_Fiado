@@ -2,6 +2,8 @@ package src.main.java.modelo;
 
 import java.util.ArrayList;
 
+@Entity
+@Table(name = "clientes")
 public class Cliente {
 	protected String nome;
 	private String cpf;

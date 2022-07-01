@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 import src.main.java.modelo.Produto;
 
+@Entity
+@Table(name = "compras")
 public class Compra {
 	protected LocalDateTime dataCompra;
 	protected Float valorPendente;
