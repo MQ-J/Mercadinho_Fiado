@@ -1,1 +1,4 @@
-fiado/src/main/java/modelo/Produto.class
+src/main/java/modelo/Cliente.class
+src/main/java/modelo/Produto.class
+src/main/java/modelo/Compra.class
+src/main/java/modelo/Pagamento.class

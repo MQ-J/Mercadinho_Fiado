@@ -1,10 +1,10 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-import fiado.src.main.java.modelo.Cliente;
-import fiado.src.main.java.modelo.Compra;
-import fiado.src.main.java.modelo.Pagamento;
-import fiado.src.main.java.modelo.Produto;
+import src.main.java.modelo.Cliente;
+import src.main.java.modelo.Compra;
+import src.main.java.modelo.Pagamento;
+import src.main.java.modelo.Produto;
 
 public class Main {
 	public static void main(String[] args) {

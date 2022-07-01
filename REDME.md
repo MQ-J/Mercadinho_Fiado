@@ -9,3 +9,8 @@ https://mvnrepository.com/
 
 ## SERVELET tutorial
 https://www.brandondonnelson.com/2020/06/creating-java-web-app-servlet-in-visual.html
+
+## Maven!
+- mvn compile
+- mvn package
+- mvn install
