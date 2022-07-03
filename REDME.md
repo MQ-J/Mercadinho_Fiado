@@ -11,9 +11,9 @@ https://mvnrepository.com/
 https://www.brandondonnelson.com/2020/06/creating-java-web-app-servlet-in-visual.html
 
 ## Maven!
+- mvn install
 - mvn package
 - mvn compile
-- mvn install
 
 ## Desenvolvendo o JSP
 - mvn package (atualiza o arquivo .war)
