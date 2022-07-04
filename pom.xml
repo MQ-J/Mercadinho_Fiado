@@ -77,6 +77,12 @@
       <scope>provided</scope>
     </dependency>
 
+    <!-- to use foreach in jsp -->
+    <dependency>
+      <groupId>org.glassfish.web</groupId>
+      <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+      <version>2.0.0</version>
+  </dependency>
   </dependencies>
 
   <build>

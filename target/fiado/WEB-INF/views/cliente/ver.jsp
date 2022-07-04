@@ -1,15 +1,10 @@
 <%@page import="java.text.NumberFormat"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page import="src.main.java.modelo.Cliente" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
-<%
-	Cliente p = (Cliente) request.getAttribute("a");
-%>
-<%
-	Cliente c = (Cliente) request.getAttribute("b");
-%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -50,26 +45,21 @@
 			</div>
 		</nav>
 
-		<ul class="list-group w-50 mx-auto">
-			<li class="list-group-item d-flex justify-content-between align-items-center">
-				<%= p.getNome() %>
-			  <span class="badge bg-success rounded-pill"><%= p.gettelefone() %></span>
-              <% if(p.getCompras() == null){ %>
-                    <span class="badge bg-primary rounded-pill">Cliente ainda não fez compras</span>
-              <% }else{ %>
-                    <span class="badge bg-primary rounded-pill"><%= p.getCompras() %></span>
-              <%} %>
-			</li>
-
-			<li class="list-group-item d-flex justify-content-between align-items-center">
-				<%= c.getNome() %>
-			  <span class="badge bg-success rounded-pill"><%= c.gettelefone() %></span>
-              <% if(c.getCompras() == null){ %>
-                    <span class="badge bg-primary rounded-pill">Cliente ainda não fez compras</span>
-              <% }else{ %>
-                    <span class="badge bg-primary rounded-pill"><%= c.getCompras() %></span>
-              <%} %>
-			</li>
+		<ul class="list-group w-50 mx-auto mt-5">
+			<c:forEach items="${clientes}" var="clientes">
+				<li class="list-group-item d-flex justify-content-between align-items-center">
+					<c:out value=" ${clientes.nome}"/>
+					<span class="badge bg-success rounded-pill"><c:out value="${clientes.telefone}"/></span>
+					<c:choose>
+						<c:when test="${null eq clientes.compras}">
+							<span class="badge bg-primary rounded-pill">Cliente ainda não fez compras</span>
+						</c:when>
+						<c:otherwise>
+							<span class="badge bg-primary rounded-pill"><c:out value="${clientes.compras}"/></span>
+						</c:otherwise>
+					</c:choose>
+				</li>
+			</c:forEach>
 		</ul>
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
