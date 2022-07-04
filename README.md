@@ -11,8 +11,8 @@ https://www.brandondonnelson.com/2020/06/creating-java-web-app-servlet-in-visual
 
 ## Maven!
 - mvn install
-- mvn package
 - mvn compile
+- mvn package
 
 ## Desenvolvendo o JSP
 - mvn compile (atualiza as classes)
@@ -24,8 +24,5 @@ https://www.brandondonnelson.com/2020/06/creating-java-web-app-servlet-in-visual
 - na classe java, fazer o tratamento usando os modelos, e retornar uma página jsp (sua view)
 - na view, mostrar as coisas.
 
-## INSERT no Heroku
-insert into Produto(id, nome, valor)
-values(1, 'arroz', 2);
-
-select * from Produto;
+## Elephantsql
+https://api.elephantsql.com/console/812fe47f-c7b0-4d3b-be92-562e577c8e04/details
