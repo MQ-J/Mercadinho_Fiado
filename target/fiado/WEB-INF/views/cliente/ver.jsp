@@ -31,13 +31,13 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="/fiado">Home</a>
+						<a class="nav-link" href="/fiado">Home</a>
 						</li>
 						<li class="nav-item">
 						<a class="nav-link" href="/fiado/produtos">Produtos</a>
 						</li>
 						<li class="nav-item">
-						<a class="nav-link" href="/fiado/clientes">Clientes</a>
+						<a class="nav-link  active" aria-current="page" href="/fiado/clientes">Clientes</a>
 						</li>
 						<li class="nav-item">
 						<a class="nav-link" href="/fiado/compras">Compras</a>
