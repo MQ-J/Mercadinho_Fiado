@@ -1,6 +1,6 @@
 <%@page import="java.text.NumberFormat"%>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@ page import="fiado.src.main.java.modelo.Produto" %>
+<%@ page import="src.main.java.modelo.Produto" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 

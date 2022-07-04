@@ -19,3 +19,8 @@ https://www.brandondonnelson.com/2020/06/creating-java-web-app-servlet-in-visual
 - mvn package (atualiza o arquivo .war)
 - mvn compile (atualiza as classes)
 - atualiza a página (f5)
+
+## Controlando rotas
+- adicionar o servlet no arquivo web.xml (relaciona classe java com rota do site)
+- na classe java, fazer o tratamento usando os modelos, e retornar uma página jsp (sua view)
+- na view, mostrar as coisas.
