@@ -41,8 +41,10 @@ public class VerProdutoServlet extends HttpServlet
             new Produto(7, "File de Frango Kg", 18f)
         };*/
         request.setAttribute("produtos", produtos);
+        request.setAttribute("tituloPagina", "Ver Produtos Cadastrados");
+        request.setAttribute("pathview", "/WEB-INF/views/produto/ver.jsp");
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/produto/ver.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/template.jsp");
         rd.forward(request, response);
 	}
 }
