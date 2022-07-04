@@ -52,11 +52,13 @@
 
 		<ul class="list-group w-50 mx-auto">
 			<li class="list-group-item d-flex justify-content-between align-items-center">
-				<%= p.getValorPago() %>
+				<%= p.getValorPago() %><br>
+				Pago no dia: <%= p.getDataPagto() %>
 			</li>
 
 			<li class="list-group-item d-flex justify-content-between align-items-center">
-				<%= c.getValorPago() %>
+				<%= c.getValorPago() %><br>
+				Pago no dia: <%= c.getDataPagto() %>
 			</li>
 		</ul>
 

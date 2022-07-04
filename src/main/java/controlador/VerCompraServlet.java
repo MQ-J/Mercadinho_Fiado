@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import src.main.java.modelo.Compra;
 import src.main.java.modelo.Produto;
 import src.main.java.modelo.Cliente;
+import src.main.java.modelo.Pagamento;
 
 import java.util.ArrayList;
 
@@ -39,10 +40,16 @@ public class VerCompraServlet extends HttpServlet
 
         ArrayList<Produto> produtosC = new ArrayList<Produto>();
         produtosC.add(new Produto(1, "Arroz Guacira", 20.5f));
+
+        ArrayList<Pagamento> pagamentoB = new ArrayList<Pagamento>();
+        pagamentoB.add(new Pagamento(LocalDateTime.now(), (float) 28.1, null));
+
+        ArrayList<Pagamento> pagamentoC = new ArrayList<Pagamento>();
+        pagamentoC.add(new Pagamento(LocalDateTime.now(), (float) 20.5, null));
         
-		Compra a = new Compra(LocalDateTime.now(), (float) 5, produtosA, new Cliente("Dona Benedita de Oliveira", "709.598.660-60", "11958556473", null), null);
-        Compra b = new Compra(LocalDateTime.now(), (float) 10, produtosB, new Cliente("Miguel Santana", "504.807.670-25", "99865-2618", null), null);
-        Compra c = new Compra(LocalDateTime.now(), (float) 0, produtosC, new Cliente("Sandra de Oliveira", "274.090.820-20", "99664-9590", null), null);
+		Compra a = new Compra(LocalDateTime.now(), (float) 26.25, produtosA, new Cliente("Dona Benedita de Oliveira", "709.598.660-60", "11958556473", null), null);
+        Compra b = new Compra(LocalDateTime.now(), (float) 10, produtosB, new Cliente("Miguel Santana", "504.807.670-25", "99865-2618", null), pagamentoB);
+        Compra c = new Compra(LocalDateTime.now(), (float) 0, produtosC, new Cliente("Sandra de Oliveira", "274.090.820-20", "99664-9590", null), pagamentoC);
 
         request.setAttribute("a", a);
         request.setAttribute("b", b);
