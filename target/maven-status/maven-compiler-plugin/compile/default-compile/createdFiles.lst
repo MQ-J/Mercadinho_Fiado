@@ -1,7 +1,9 @@
 src/main/java/modelo/Cliente.class
+src/main/java/modelo/repositorio/FabricaConexao.class
 src/main/java/modelo/Produto.class
 controlador/VerCompraServlet.class
 src/main/java/modelo/Compra.class
+src/main/java/modelo/repositorio/ProdutoDAO.class
 controlador/VerPagamentoServlet.class
 controlador/VerProdutoServlet.class
 controlador/VerClienteServlet.class

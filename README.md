@@ -15,8 +15,8 @@ https://www.brandondonnelson.com/2020/06/creating-java-web-app-servlet-in-visual
 - mvn compile
 
 ## Desenvolvendo o JSP
-- mvn package (atualiza o arquivo .war)
 - mvn compile (atualiza as classes)
+- mvn package (atualiza o arquivo .war)
 - atualiza a página (f5)
 
 ## Controlando rotas
