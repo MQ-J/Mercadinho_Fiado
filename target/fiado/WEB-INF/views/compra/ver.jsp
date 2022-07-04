@@ -10,6 +10,9 @@
 <%
 	Compra c = (Compra) request.getAttribute("b");
 %>
+<%
+	Compra f = (Compra) request.getAttribute("c");
+%>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -52,11 +55,19 @@
 
 		<ul class="list-group w-50 mx-auto">
 			<li class="list-group-item d-flex justify-content-between align-items-center">
-				<%= p.getDataCompra() %>
+				<%= p.getCliente().getNome() %><br>
+				<%= p.getDataCompra() %><br>
+				<%= p.getValorPendente() %><br>
+				<%= p.getProdutos() %><br>
+				<%= p.getPagamentos() %><br>
 			</li>
 
 			<li class="list-group-item d-flex justify-content-between align-items-center">
 				<%= c.getDataCompra() %>
+			</li>
+
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+				<%= f.getDataCompra() %>
 			</li>
 		</ul>
 

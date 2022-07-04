@@ -18,6 +18,10 @@ public class Compra {
 	public Compra(LocalDateTime dataCompra, Float valorPendente, ArrayList<Produto> produtos, 
 			Cliente cliente, ArrayList<Pagamento> pagamentos) {
 		this.dataCompra = dataCompra;
+		this.valorPendente = valorPendente;
+		this.produtos = produtos;
+		this.cliente = cliente;
+		this.pagamentos = pagamentos;
 	}
 
 	/* Métodos Getters e Setters */
