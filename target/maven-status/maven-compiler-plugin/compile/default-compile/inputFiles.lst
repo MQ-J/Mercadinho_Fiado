@@ -1,1 +1,8 @@
-/workspaces/LP2A4/fiado/src/main/java/modelo/Produto.java
+/workspaces/LP2A4/src/main/java/modelo/Pagamento.java
+/workspaces/LP2A4/src/main/java/controlador/VerClienteServlet.java
+/workspaces/LP2A4/src/main/java/controlador/VerProdutoServlet.java
+/workspaces/LP2A4/src/main/java/modelo/Compra.java
+/workspaces/LP2A4/src/main/java/modelo/Cliente.java
+/workspaces/LP2A4/src/main/java/controlador/VerCompraServlet.java
+/workspaces/LP2A4/src/main/java/modelo/Produto.java
+/workspaces/LP2A4/src/main/java/controlador/VerPagamentoServlet.java
