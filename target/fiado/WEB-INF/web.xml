@@ -28,4 +28,24 @@
     <servlet-name>Clientes</servlet-name>
     <url-pattern>/clientes</url-pattern>
 </servlet-mapping>
+
+<!-- Ver Compras -->
+<servlet>
+    <servlet-name>Compras</servlet-name>
+    <servlet-class>controlador.VerCompraServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Compras</servlet-name>
+    <url-pattern>/compras</url-pattern>
+</servlet-mapping>
+
+<!-- Ver Pagamentos -->
+<servlet>
+    <servlet-name>Pagamentos</servlet-name>
+    <servlet-class>controlador.VerPagamentoServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Pagamentos</servlet-name>
+    <url-pattern>/pagamentos</url-pattern>
+</servlet-mapping>
   </web-app>

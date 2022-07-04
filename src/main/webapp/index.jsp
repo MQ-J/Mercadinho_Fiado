@@ -29,6 +29,12 @@
                     <li class="nav-item">
                     <a class="nav-link" href="/fiado/clientes">Clientes</a>
                     </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/fiado/compras">Compras</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/fiado/pagamentos">Pagamentos</a>
+                    </li>
                 </ul>
             </div>
         </div>
