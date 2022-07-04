@@ -1,6 +1,8 @@
 <%@page import="java.text.NumberFormat"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page import="src.main.java.modelo.Compra" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.time.ZoneId" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -59,7 +61,11 @@
 			<li class="list-group-item d-flex flex-column">
 				<h5 class="d-flex justify-content-between">
 					<p><%= a.getCliente().getNome() %>
-					<p><%= a.getDataCompra() %></p>
+					<% 
+					SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+					Date dt = Date.from(a.getDataCompra().atZone(ZoneId.systemDefault()).toInstant());
+					%>
+					<p><%= df.format(dt) %></p>
 				</h5>
 				<p class="badge bg-primary rounded-pill">Valor pendente: <%= a.getValorPendente() %></p>
 				<p><%= a.getProdutos().get(0).getNome() %> - R$ <%= a.getProdutos().get(0).getValor() %></p>
