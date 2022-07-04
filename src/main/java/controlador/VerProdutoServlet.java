@@ -23,9 +23,11 @@ public class VerProdutoServlet extends HttpServlet
     protected void doGet(HttpServletRequest request,
     					 HttpServletResponse response) throws ServletException, IOException
     {
-		Produto p = new Produto(1, "Arroz", 30.5f);
+		Produto arroz = new Produto(1, "Arroz Guacira", 20.5f);
+        Produto cocaCola = new Produto(2, "Coca-Cola 2L", 7.5f);
 
-        request.setAttribute("produto", p);
+        request.setAttribute("arroz", arroz);
+        request.setAttribute("cocaCola", cocaCola);
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/produto/ver.jsp");
         rd.forward(request, response);
