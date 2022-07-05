@@ -41,7 +41,10 @@ public class VerClienteServlet extends HttpServlet
         };
         request.setAttribute("clientes", clientes);
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/cliente/ver.jsp");
+        request.setAttribute("tituloPagina", "Meus Clientes");
+        request.setAttribute("pathview", "/WEB-INF/views/cliente/ver.jsp");
+
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/template.jsp");
         rd.forward(request, response);
 	}
 }
