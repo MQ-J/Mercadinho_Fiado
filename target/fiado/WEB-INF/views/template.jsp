@@ -34,7 +34,7 @@
 						<a class="nav-link" href="/fiado">Home</a>
 						</li>
 						<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="/fiado/produtos">Produtos</a>
+						<a class="nav-link" href="/fiado/produtos">Produtos</a>
 						</li>
 						<li class="nav-item">
 						<a class="nav-link" href="/fiado/clientes">Clientes</a>
@@ -50,7 +50,6 @@
 			</div>
 		</nav>
 		
-        <h1><%= tituloPagina %></h1>
         <jsp:include page="${pathview}"></jsp:include>
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

@@ -55,7 +55,11 @@ public class VerCompraServlet extends HttpServlet
         request.setAttribute("b", b);
         request.setAttribute("c", c);
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/compra/ver.jsp");
+
+        request.setAttribute("tituloPagina", "Compras Realizadas");
+        request.setAttribute("pathview", "/WEB-INF/views/compra/ver.jsp");
+
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/template.jsp");
         rd.forward(request, response);
 	}
 }
