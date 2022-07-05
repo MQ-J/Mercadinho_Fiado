@@ -16,5 +16,10 @@ https://www.brandondonnelson.com/2020/06/creating-java-web-app-servlet-in-visual
 - na classe java, fazer o tratamento usando os modelos, e retornar uma página jsp (sua view)
 - na view, mostrar as coisas.
 
-## Elephantsql
+## Banco de dados Elephantsql
 https://api.elephantsql.com/console/812fe47f-c7b0-4d3b-be92-562e577c8e04/details
+
+- para fazer operações no banco: https://api.elephantsql.com/console/812fe47f-c7b0-4d3b-be92-562e577c8e04/browser?
+- tabela com relacionamento: 
+  - insert into clientes (cpf, nome, telefone, compras)
+values ('35302358069', 'Talita Amarajó', '11987048372', '{}');
