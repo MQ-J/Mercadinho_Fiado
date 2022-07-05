@@ -39,7 +39,10 @@ public class VerPagamentoServlet extends HttpServlet
         request.setAttribute("a", a);
         request.setAttribute("b", b);
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/pagamento/ver.jsp");
+        request.setAttribute("tituloPagina", "Pagamentos");
+        request.setAttribute("pathview", "/WEB-INF/views/pagamento/ver.jsp");
+
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/template.jsp");
         rd.forward(request, response);
 	}
 }

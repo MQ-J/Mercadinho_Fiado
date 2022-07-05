@@ -19,7 +19,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
-	<ul class="list-group w-50 mx-auto">
+	<ul class="list-group w-50 mx-auto mt-5">
 		<li class="list-group-item d-flex flex-column">
 			<h5 class="d-flex justify-content-between">
 				<p><%= a.getCliente().getNome() %>
