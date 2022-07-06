@@ -12,14 +12,15 @@
 			<li class="list-group-item d-flex justify-content-between align-items-center">
 				<c:out value=" ${clientes.nome}"/>
 				<span class="badge bg-success rounded-pill"><c:out value="${clientes.telefone}"/></span>
-				<c:choose>
+				<!-- LIBERAR QUANDO TIVER COMPRA COM ID DE CLIENTE -->
+				<!-- <c:choose>
 					<c:when test="${null eq clientes.compras}">
 						<span class="badge bg-primary rounded-pill">Cliente ainda não fez compras</span>
 					</c:when>
 					<c:otherwise>
 						<span class="badge bg-primary rounded-pill"><c:out value="${clientes.compras}"/></span>
 					</c:otherwise>
-				</c:choose>
+				</c:choose> -->
 			</li>
 		</c:forEach>
 	</ul>

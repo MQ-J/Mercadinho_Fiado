@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Cliente {
 	protected String nome;
-	private String cpf;
+	protected String cpf;
 	protected String telefone;
 	protected ArrayList<Compra> compras;
 
@@ -18,6 +18,8 @@ public class Cliente {
 		this.telefone = telefone;
 		this.compras = compras;
 	}
+
+	public Cliente() {}
 
 	/* Métodos Getters e Setters */
 

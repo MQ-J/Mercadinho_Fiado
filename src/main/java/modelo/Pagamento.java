@@ -18,6 +18,8 @@ public class Pagamento {
 		this.compras = compras;
 	}
 
+	public Pagamento() {}
+
 	/* Métodos Getters e Setters */
 
 	public Float getValorPago() {

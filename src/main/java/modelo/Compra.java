@@ -24,6 +24,8 @@ public class Compra {
 		this.pagamentos = pagamentos;
 	}
 
+	public Compra() {}
+
 	/* Métodos Getters e Setters */
 
 	public LocalDateTime getDataCompra() {
