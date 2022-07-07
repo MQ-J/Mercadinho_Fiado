@@ -1,3 +1,6 @@
+## PODE SER UTIL
+- Timestamp.valueOf(LocalDateTime.now())
+
 
 ## instalando Tomcat no codespaces
 https://code.visualstudio.com/docs/java/java-tomcat-jetty#_community-server-connectors

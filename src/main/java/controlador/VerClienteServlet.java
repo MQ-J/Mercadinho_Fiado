@@ -40,21 +40,17 @@ public class VerClienteServlet extends HttpServlet
         rd.forward(request, response);
 	}
 
-    // protected void doPost(HttpServletRequest request, HttpServletResponse response)
-	// 		throws ServletException, IOException {
-	// 	final Funcionario funcionario = new Funcionario();
+    protected void doPost(HttpServletRequest request, 
+                        HttpServletResponse response) throws ServletException, IOException
+    {
+		String cpf = request.getParameter("cpf");
+        String nome = request.getParameter("nome");
+        String phone = request.getParameter("phone");
 
-	// 	final FuncionarioRepositorio repositorio = new FuncionarioRepositorio();
+		ClienteDAO fb = new ClienteDAO();
 
-	// 	Assign.Value(str -> funcionario.setNome(str), request, "nome");
-	// 	Assign.Value(str -> funcionario.setCpf(str), request, "cpf");
-	// 	Assign.Value(str -> funcionario.setProntuario(Long.parseLong(str)), request, "prontuario");
-	// 	Assign.Value(str -> funcionario.setCargo(str), request, "cargo");
+        int resultado = fb.novoCliente(cpf, nome, phone);
 
-	// 	repositorio.criar(funcionario);
-
-	// 	PersistenceConfig.closeEntityManager();
-
-	// 	doGet(request, response);
-	// }
+		doGet(request, response);
+	}
 }

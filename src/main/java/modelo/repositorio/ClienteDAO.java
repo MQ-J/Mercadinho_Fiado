@@ -79,29 +79,21 @@ public class ClienteDAO extends FabricaConexao {
 
 // }
 
-	public ArrayList<Cliente> novoCliente() {
-
-		ArrayList<Cliente> resultado = null;
-		ArrayList<Compra> compras = null;
+	public int novoCliente(String cpf, String nome, String telefone) {
+		
+		int rs = 0;
 		
 		try
 		{
-			String stmt = "insert into clientes (cpf, nome, telefone)
-			values (?, ?, ?)";
+			String stmt = "insert into clientes (cpf, nome, telefone) values (?, ?, ?)";
 			
 			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
-			ResultSet rs = pStmt.executeQuery();
-			resultado = new ArrayList<Cliente>();
-			
-			while(rs.next()) {
-				Cliente p = new Cliente();
-				p.setNome(rs.getString("nome"));
-				p.setCpf(rs.getString("cpf"));
-				p.settelefone(rs.getString("telefone"));
-				p.setCompras(compras);
-				
-				resultado.add(p);
-			}
+
+			pStmt.setString(1, cpf);
+            pStmt.setString(2, nome);
+            pStmt.setString(3, telefone);
+
+			rs = pStmt.executeUpdate();
 			
 			super.fecharConexao();
 		}
@@ -110,7 +102,7 @@ public class ClienteDAO extends FabricaConexao {
 			System.out.println("Erro ao tentar recuperar os Clientes cadastrados. " + e.getMessage());
 		}
 		
-		return resultado;
+		return rs;
 	}
 
 }
