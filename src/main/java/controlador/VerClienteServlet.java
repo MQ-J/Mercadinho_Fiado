@@ -39,4 +39,22 @@ public class VerClienteServlet extends HttpServlet
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/template.jsp");
         rd.forward(request, response);
 	}
+
+    // protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	// 		throws ServletException, IOException {
+	// 	final Funcionario funcionario = new Funcionario();
+
+	// 	final FuncionarioRepositorio repositorio = new FuncionarioRepositorio();
+
+	// 	Assign.Value(str -> funcionario.setNome(str), request, "nome");
+	// 	Assign.Value(str -> funcionario.setCpf(str), request, "cpf");
+	// 	Assign.Value(str -> funcionario.setProntuario(Long.parseLong(str)), request, "prontuario");
+	// 	Assign.Value(str -> funcionario.setCargo(str), request, "cargo");
+
+	// 	repositorio.criar(funcionario);
+
+	// 	PersistenceConfig.closeEntityManager();
+
+	// 	doGet(request, response);
+	// }
 }
