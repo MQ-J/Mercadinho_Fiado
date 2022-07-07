@@ -26,10 +26,10 @@
 	</ul>
 
 	<!-- botão que ativa modal novo cliente -->
-	<div>
+	<div class="position-relative w-50 mx-auto mt-5">
 		<button 
 			type="button" 
-			class="btn btn-success rounded-circle" 
+			class="btn btn-success rounded-circle position-absolute bottom-0 end-0" 
 			data-bs-toggle="modal" 
 			data-bs-target="#newClient">
 			+
@@ -37,7 +37,7 @@
 	</div>
   
 	<!-- Modal novo cliente -->
-	<div class="modal fade" id="newClient" tabindex="-1" aria-labelledby="modal de novo usuário" aria-hidden="true">
+	<div class="modal fade" id="newClient" tabindex="-1" aria-labelledby="modal de novo cliente" aria-hidden="true">
 		<div class="modal-dialog">
 		<div class="modal-content">
 

@@ -38,4 +38,18 @@ public class VerProdutoServlet extends HttpServlet
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/template.jsp");
         rd.forward(request, response);
 	}
+
+    protected void doPost(HttpServletRequest request, 
+                        HttpServletResponse response) throws ServletException, IOException
+    {
+        int id = Integer.parseInt(request.getParameter("id"));
+		String nome = request.getParameter("nome");
+        Float valor = Float.parseFloat(request.getParameter("valor"));
+
+		ProdutoDAO fb = new ProdutoDAO();
+
+        int resultado = fb.novoProduto(id, nome, valor);
+
+		doGet(request, response);
+	}
 }

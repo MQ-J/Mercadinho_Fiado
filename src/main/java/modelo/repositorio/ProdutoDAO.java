@@ -39,4 +39,30 @@ public class ProdutoDAO extends FabricaConexao {
 		return resultado;
 	}
 
+	public int novoProduto(int id, String nome, Float valor) {
+		
+		int rs = 0;
+		
+		try
+		{
+			String stmt = "insert into produtos (id, nome, valor) values (?, ?, ?)";
+			
+			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
+
+			pStmt.setInt(1, id);
+            pStmt.setString(2, nome);
+            pStmt.setFloat(3, valor);
+
+			rs = pStmt.executeUpdate();
+			
+			super.fecharConexao();
+		}
+		catch (Exception e)
+		{
+			System.out.println("Erro ao tentar criar este Produto. " + e.getMessage());
+		}
+		
+		return rs;
+	}
+
 }
