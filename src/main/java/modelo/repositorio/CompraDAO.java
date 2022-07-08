@@ -17,14 +17,11 @@ public class CompraDAO extends FabricaConexao {
     public ArrayList<Compra> recuperarCompras() {
 
 		ArrayList<Compra> resultado = null;
-
-		ArrayList<Produto> produtos = null;
-        Cliente clientes = null;
         ArrayList<Pagamento> pagamentos = null;
 		
 		try
 		{
-			String stmt = "select data, valorpendente from compras";
+			String stmt = "SELECT data, valorpendente, nome, idproduto FROM compras c INNER JOIN clientes p ON p.cpf = c.cpfcliente";
 			
 			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
 			ResultSet rs = pStmt.executeQuery();
@@ -34,11 +31,27 @@ public class CompraDAO extends FabricaConexao {
 				Compra p = new Compra();
 
                 LocalDateTime date = rs.getTimestamp("data").toLocalDateTime();
-                p.setDataCompra(date);
+                p.setDataCompra(date);                                          //coloca a data e o valor pendente na compra
                 p.setValorPendente(rs.getFloat("valorpendente"));
 
-                p.setProdutos(produtos); //usar o campo idproduto para pesquisar produto
-                p.setCliente(clientes); //usar o campo cpfcliente para pesquisar cliente
+				String PROD = "select nome, valor from produtos where id=?";
+				PreparedStatement getPROD = super.abrirConexao().prepareStatement(PROD);
+				getPROD.setInt(1, rs.getInt("idproduto"));
+				ResultSet queryproduto = getPROD.executeQuery();                  //pesquisa o produto usando o idproduto
+				super.fecharConexao();
+
+				ArrayList<Produto> produtos = new ArrayList<Produto>();
+				while(queryproduto.next()) {
+					Produto produto = new Produto();
+					produto.setNome(queryproduto.getString("nome"));
+					produto.setValor(queryproduto.getFloat("valor"));      //instancia novo produto
+					produtos.add(produto);
+					p.setProdutos(produtos); //correlaciona produto
+				}
+
+				Cliente cliente = new Cliente();
+				cliente.setNome(rs.getString("nome")); //correlaciona o cliente
+                p.setCliente(cliente);
 
                 p.setPagamentos(pagamentos); //usar o campo idcompra para pesquisar os pagamentos
 				

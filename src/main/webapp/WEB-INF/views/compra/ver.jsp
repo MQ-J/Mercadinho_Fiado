@@ -24,7 +24,7 @@
 		<c:forEach items="${compras}" var="compras">
 			<li class="list-group-item d-flex flex-column">
 				<h5 class="d-flex justify-content-between">
-					<p><c:out value=" ${compras.cliente}"/></p>
+					<p><c:out value=" ${compras.cliente.nome}"/></p>
 					<p><c:out value=" ${compras.dataCompra}"/></p>
 				</h5>
 				<p class="badge bg-primary rounded-pill">Valor pendente: <c:out value=" ${compras.valorPendente}"/></p>
