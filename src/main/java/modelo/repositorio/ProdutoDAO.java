@@ -83,23 +83,25 @@ public class ProdutoDAO extends FabricaConexao {
 		}
 		catch (Exception e)
 		{
-			System.out.println("Erro ao tentar criar este Produto. " + e.getMessage());
+			System.out.println("Erro ao tentar apagar este Produto. " + e.getMessage());
 		}
 		
 		return rs;
 	}
 
-	public int EditarProdutos(int id) {
+	public int EditarProdutos(String nome, Float valor, int id) {
 		
 		int rs = 0;
 		
 		try
 		{
-			String stmt = "delete from produtos where id=?";
+			String stmt = "update produtos set nome=?, valor=? where id=?";
 			
 			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
 
-			pStmt.setInt(1, id);
+			pStmt.setString(1, nome);
+            pStmt.setFloat(2, valor);
+			pStmt.setInt(3, id);
 
 			rs = pStmt.executeUpdate();
 			
@@ -107,7 +109,7 @@ public class ProdutoDAO extends FabricaConexao {
 		}
 		catch (Exception e)
 		{
-			System.out.println("Erro ao tentar criar este Produto. " + e.getMessage());
+			System.out.println("Erro ao tentar editar este Produto. " + e.getMessage());
 		}
 		
 		return rs;

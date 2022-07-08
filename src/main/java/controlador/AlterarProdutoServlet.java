@@ -43,8 +43,11 @@ public class AlterarProdutoServlet extends HttpServlet
     {
 		ProdutoDAO fb = new ProdutoDAO();
 
+        String nome = request.getParameter("nome");
+        Float valor = Float.parseFloat(request.getParameter("valor"));
         int id = Integer.parseInt(request.getParameter("id"));
-        int produtos = fb.EditarProdutos(id);
+
+        int produtos = fb.EditarProdutos(nome, valor, id);
 
         VerProdutoServlet ver = new VerProdutoServlet();
         ver.doGet(request, response);
