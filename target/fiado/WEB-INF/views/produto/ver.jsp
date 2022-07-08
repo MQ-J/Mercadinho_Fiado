@@ -11,7 +11,7 @@
 	<div class="position-relative w-50 mx-auto mt-5">
 		<button 
 			type="button" 
-			class="btn btn-success rounded-circle  position-absolute bottom-0 end-0" 
+			class="btn btn-success rounded-circle  position-absolute bottom-0 end-0 mb-3" 
 			data-bs-toggle="modal" 
 			data-bs-target="#newProduto">
 			+
@@ -63,7 +63,7 @@
 								<label for="valor" class="form-label">valor</label>
 								<input type="number" step="0.01" class="form-control" id="valor" name="valor" min="1" value="${produtos.valor}">
 							</div>
-							
+
 							<input type="number" class="form-control" id="id" name="id" value="${produtos.id}" hidden>
 							<button type="submit" class="btn btn-success">Submit</button>
 						</form>

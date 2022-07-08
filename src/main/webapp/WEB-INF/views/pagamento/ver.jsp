@@ -10,7 +10,7 @@
 	<div class="position-relative w-50 mx-auto mt-5">
 		<button 
 			type="button" 
-			class="btn btn-success rounded-circle  position-absolute bottom-0 end-0" 
+			class="btn btn-success rounded-circle  position-absolute bottom-0 end-0 mb-3" 
 			data-bs-toggle="modal" 
 			data-bs-target="#newPagamento">
 			+
@@ -22,7 +22,7 @@
 			<li class="list-group-item d-flex justify-content-between align-items-center">
 				<c:out value=" ${pagamentos.valorPago}"/><br>
 				<c:out value=" ${pagamentos.dataPagto}"/>
-				
+
 				<div class="d-flex gap-3">
 					<a type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editaPagamento${pagamentos.dataPagto}"> <!-- USA O ID DO PAGAMENTO MANO -->
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">

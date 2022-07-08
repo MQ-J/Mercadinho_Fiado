@@ -13,7 +13,7 @@
 	<div class="position-relative w-50 mx-auto mt-5">
 		<button 
 			type="button" 
-			class="btn btn-success rounded-circle  position-absolute bottom-0 end-0" 
+			class="btn btn-success rounded-circle  position-absolute bottom-0 end-0 mb-3" 
 			data-bs-toggle="modal" 
 			data-bs-target="#newCompra">
 			+
