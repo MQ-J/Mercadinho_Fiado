@@ -49,43 +49,43 @@
     <url-pattern>/pagamentos</url-pattern>
 </servlet-mapping>
 
-<!-- apaga produtos -->
+<!-- altera produtos -->
 <servlet>
-    <servlet-name>apagaProdutos</servlet-name>
-    <servlet-class>controlador.ApagarProdutoServlet</servlet-class>
+    <servlet-name>alteraProdutos</servlet-name>
+    <servlet-class>controlador.AlterarProdutoServlet</servlet-class>
 </servlet>
 <servlet-mapping>
-    <servlet-name>apagaProdutos</servlet-name>
-    <url-pattern>/produtos/delete</url-pattern>
+    <servlet-name>alteraProdutos</servlet-name>
+    <url-pattern>/produtos/altera</url-pattern>
 </servlet-mapping>
 
-<!-- apaga clientes -->
+<!-- altera clientes -->
 <servlet>
-    <servlet-name>apagaClientes</servlet-name>
-    <servlet-class>controlador.ApagarClienteServlet</servlet-class>
+    <servlet-name>alteraClientes</servlet-name>
+    <servlet-class>controlador.AlterarClienteServlet</servlet-class>
 </servlet>
 <servlet-mapping>
-    <servlet-name>apagaClientes</servlet-name>
-    <url-pattern>/clientes/delete</url-pattern>
+    <servlet-name>alteraClientes</servlet-name>
+    <url-pattern>/clientes/altera</url-pattern>
 </servlet-mapping>
 
-<!-- apaga pagamentos -->
+<!-- altera pagamentos -->
 <servlet>
-    <servlet-name>apagaPagamentos</servlet-name>
-    <servlet-class>controlador.ApagarPagamentoServlet</servlet-class>
+    <servlet-name>alteraPagamentos</servlet-name>
+    <servlet-class>controlador.AlterarPagamentoServlet</servlet-class>
 </servlet>
 <servlet-mapping>
-    <servlet-name>apagaPagamentos</servlet-name>
-    <url-pattern>/pagamentos/delete</url-pattern>
+    <servlet-name>alteraPagamentos</servlet-name>
+    <url-pattern>/pagamentos/altera</url-pattern>
 </servlet-mapping>
 
-<!-- apaga compras -->
+<!-- altera compras -->
 <servlet>
-    <servlet-name>apagaCompras</servlet-name>
-    <servlet-class>controlador.ApagarCompraServlet</servlet-class>
+    <servlet-name>alteraCompras</servlet-name>
+    <servlet-class>controlador.AlterarCompraServlet</servlet-class>
 </servlet>
 <servlet-mapping>
-    <servlet-name>apagaCompras</servlet-name>
-    <url-pattern>/compras/delete</url-pattern>
+    <servlet-name>alteraCompras</servlet-name>
+    <url-pattern>/compras/altera</url-pattern>
 </servlet-mapping>
   </web-app>

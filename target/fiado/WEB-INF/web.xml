@@ -49,13 +49,43 @@
     <url-pattern>/pagamentos</url-pattern>
 </servlet-mapping>
 
-<!-- apaga produtos -->
+<!-- altera produtos -->
 <servlet>
-    <servlet-name>apagaProdutos</servlet-name>
-    <servlet-class>controlador.ApagarProdutoServlet</servlet-class>
+    <servlet-name>alteraProdutos</servlet-name>
+    <servlet-class>controlador.AlterarProdutoServlet</servlet-class>
 </servlet>
 <servlet-mapping>
-    <servlet-name>apagaProdutos</servlet-name>
-    <url-pattern>/produtos/delete</url-pattern>
+    <servlet-name>alteraProdutos</servlet-name>
+    <url-pattern>/produtos/altera</url-pattern>
+</servlet-mapping>
+
+<!-- altera clientes -->
+<servlet>
+    <servlet-name>alteraClientes</servlet-name>
+    <servlet-class>controlador.AlterarClienteServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>alteraClientes</servlet-name>
+    <url-pattern>/clientes/altera</url-pattern>
+</servlet-mapping>
+
+<!-- altera pagamentos -->
+<servlet>
+    <servlet-name>alteraPagamentos</servlet-name>
+    <servlet-class>controlador.AlterarPagamentoServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>alteraPagamentos</servlet-name>
+    <url-pattern>/pagamentos/altera</url-pattern>
+</servlet-mapping>
+
+<!-- altera compras -->
+<servlet>
+    <servlet-name>alteraCompras</servlet-name>
+    <servlet-class>controlador.AlterarCompraServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>alteraCompras</servlet-name>
+    <url-pattern>/compras/altera</url-pattern>
 </servlet-mapping>
   </web-app>

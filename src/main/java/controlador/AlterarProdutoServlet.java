@@ -16,11 +16,11 @@ import controlador.VerProdutoServlet;
 
 import java.io.IOException;
 
-public class ApagarProdutoServlet extends HttpServlet
+public class AlterarProdutoServlet extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
        
-    public ApagarProdutoServlet()
+    public AlterarProdutoServlet()
     {
         super();
     }
@@ -33,6 +33,18 @@ public class ApagarProdutoServlet extends HttpServlet
 
         int id = Integer.parseInt(request.getParameter("id"));
         int produtos = fb.ApagarProdutos(id);
+
+        VerProdutoServlet ver = new VerProdutoServlet();
+        ver.doGet(request, response);
+	}
+
+    protected void doPost(HttpServletRequest request, 
+                        HttpServletResponse response) throws ServletException, IOException
+    {
+		ProdutoDAO fb = new ProdutoDAO();
+
+        int id = Integer.parseInt(request.getParameter("id"));
+        int produtos = fb.EditarProdutos(id);
 
         VerProdutoServlet ver = new VerProdutoServlet();
         ver.doGet(request, response);
