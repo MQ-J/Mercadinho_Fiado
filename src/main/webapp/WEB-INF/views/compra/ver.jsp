@@ -47,7 +47,7 @@
 	</ul>
   
 	<!-- Modal nova compra -->
-	<div class="modal fade" id="newCompra" tabindex="-1" aria-labelledby="modal de novo produto" aria-hidden="true">
+	<div class="modal fade" id="newCompra" tabindex="-1" aria-labelledby="modal de nova compra" aria-hidden="true">
 		<div class="modal-dialog">
 		<div class="modal-content">
 
