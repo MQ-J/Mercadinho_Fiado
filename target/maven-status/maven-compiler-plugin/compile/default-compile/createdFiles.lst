@@ -1,3 +1,4 @@
+controlador/ApagarProdutoServlet.class
 src/main/java/modelo/repositorio/FabricaConexao.class
 controlador/VerCompraServlet.class
 src/main/java/modelo/repositorio/PagamentoDAO.class

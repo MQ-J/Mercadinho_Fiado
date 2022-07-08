@@ -48,4 +48,14 @@
     <servlet-name>Pagamentos</servlet-name>
     <url-pattern>/pagamentos</url-pattern>
 </servlet-mapping>
+
+<!-- apaga produtos -->
+<servlet>
+    <servlet-name>apagaProdutos</servlet-name>
+    <servlet-class>controlador.ApagarProdutoServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>apagaProdutos</servlet-name>
+    <url-pattern>/produtos/delete</url-pattern>
+</servlet-mapping>
   </web-app>

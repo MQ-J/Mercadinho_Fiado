@@ -65,4 +65,28 @@ public class ProdutoDAO extends FabricaConexao {
 		return rs;
 	}
 
+	public int ApagarProdutos(int id) {
+		
+		int rs = 0;
+		
+		try
+		{
+			String stmt = "delete from produtos where id=?";
+			
+			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
+
+			pStmt.setInt(1, id);
+
+			rs = pStmt.executeUpdate();
+			
+			super.fecharConexao();
+		}
+		catch (Exception e)
+		{
+			System.out.println("Erro ao tentar criar este Produto. " + e.getMessage());
+		}
+		
+		return rs;
+	}
+
 }
