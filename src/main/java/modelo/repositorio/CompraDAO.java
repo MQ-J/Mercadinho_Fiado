@@ -55,4 +55,31 @@ public class CompraDAO extends FabricaConexao {
 		return resultado;
 	}
 
+	public int novaCompra(int id, String cpf, Float valor, int idCompra) {
+		
+		int rs = 0;
+		
+		try
+		{
+			String stmt = "insert into compras (data, valorpendente, idproduto, cpfcliente, idcompra) values (now(), ?, ?, ?, ?)";
+			
+			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
+
+            pStmt.setFloat(1, valor);
+			pStmt.setInt(2, id);
+			pStmt.setString(3, cpf);
+			pStmt.setInt(4, idCompra);
+
+			rs = pStmt.executeUpdate();
+			
+			super.fecharConexao();
+		}
+		catch (Exception e)
+		{
+			System.out.println("Erro ao tentar criar esta Compra. " + e.getMessage());
+		}
+		
+		return rs;
+	}
+
 }

@@ -12,6 +12,7 @@
 			<li class="list-group-item d-flex justify-content-between align-items-center">
 				<c:out value=" ${clientes.nome}"/>
 				<span class="badge bg-success rounded-pill"><c:out value="${clientes.telefone}"/></span>
+				<span class="badge bg-primary rounded-pill"><c:out value="${clientes.cpf}"/></span>
 				<!-- LIBERAR QUANDO TIVER COMPRA COM ID DE CLIENTE -->
 				<!-- <c:choose>
 					<c:when test="${null eq clientes.compras}">
