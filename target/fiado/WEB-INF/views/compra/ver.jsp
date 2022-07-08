@@ -35,11 +35,13 @@
 				
 				<c:choose>
 					<c:when test="${compras.pagamentos==null}">
-						<br><span class="bg-warning rounded-pill w-25">não há pagamentos</span>
+						<p class="bg-warning rounded-pill w-25">não há pagamentos</p>
 					</c:when>    
 					<c:otherwise> 
 						<!-- TROCAR PELO PAGAMENTO DEPOIS -->
-						<br><span class="bg-success rounded-pill w-25">Valor pago: R$<c:out value="${compras.pagamentos}"/></span>
+						<c:forEach items="${compras.pagamentos}" var="pagamentos">
+							<p class="bg-success rounded-pill w-25">Valor pago: R$<c:out value=" ${pagamentos.valorPago}"/></p>
+						</c:forEach>
 					</c:otherwise>
 				</c:choose>
 			</li>

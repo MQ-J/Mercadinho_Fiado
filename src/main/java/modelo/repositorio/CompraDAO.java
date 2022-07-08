@@ -17,11 +17,10 @@ public class CompraDAO extends FabricaConexao {
     public ArrayList<Compra> recuperarCompras() {
 
 		ArrayList<Compra> resultado = null;
-        ArrayList<Pagamento> pagamentos = null;
 		
 		try
 		{
-			String stmt = "SELECT data, valorpendente, nome, idproduto FROM compras c INNER JOIN clientes p ON p.cpf = c.cpfcliente";
+			String stmt = "SELECT data, valorpendente, nome, idproduto, idcompra FROM compras c INNER JOIN clientes p ON p.cpf = c.cpfcliente";
 			
 			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
 			ResultSet rs = pStmt.executeQuery();
@@ -34,26 +33,41 @@ public class CompraDAO extends FabricaConexao {
                 p.setDataCompra(date);                                          //coloca a data e o valor pendente na compra
                 p.setValorPendente(rs.getFloat("valorpendente"));
 
-				String PROD = "select nome, valor from produtos where id=?";
-				PreparedStatement getPROD = super.abrirConexao().prepareStatement(PROD);
-				getPROD.setInt(1, rs.getInt("idproduto"));
-				ResultSet queryproduto = getPROD.executeQuery();                  //pesquisa o produto usando o idproduto
-				super.fecharConexao();
+				/*PRODUTO*/
+					String PROD = "select nome, valor from produtos where id=?";
+					PreparedStatement getPROD = super.abrirConexao().prepareStatement(PROD);
+					getPROD.setInt(1, rs.getInt("idproduto"));
+					ResultSet queryproduto = getPROD.executeQuery();                  //pesquisa o produto usando o idproduto
+					super.fecharConexao();
 
-				ArrayList<Produto> produtos = new ArrayList<Produto>();
-				while(queryproduto.next()) {
-					Produto produto = new Produto();
-					produto.setNome(queryproduto.getString("nome"));
-					produto.setValor(queryproduto.getFloat("valor"));      //instancia novo produto
-					produtos.add(produto);
-					p.setProdutos(produtos); //correlaciona produto
-				}
+					ArrayList<Produto> produtos = new ArrayList<Produto>();
+					while(queryproduto.next()) {
+						Produto produto = new Produto();
+						produto.setNome(queryproduto.getString("nome"));
+						produto.setValor(queryproduto.getFloat("valor"));      //instancia novo produto
+						produtos.add(produto);
+						p.setProdutos(produtos); //correlaciona produto
+					}
 
+				/*CLIENTE*/
 				Cliente cliente = new Cliente();
 				cliente.setNome(rs.getString("nome")); //correlaciona o cliente
                 p.setCliente(cliente);
 
-                p.setPagamentos(pagamentos); //usar o campo idcompra para pesquisar os pagamentos
+				/*PAGAMENTOS*/
+					String PAGTO = "select valorpago from pagamentos where id=?";
+					PreparedStatement getPAGTO = super.abrirConexao().prepareStatement(PAGTO);
+					getPAGTO.setInt(1, rs.getInt("idcompra"));
+					ResultSet querypagamento = getPAGTO.executeQuery();                  //pesquisa o pagamento usando o idcompra
+					super.fecharConexao();
+
+					ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
+					while(querypagamento.next()) {
+						Pagamento pagamento = new Pagamento();
+						pagamento.setValorPago(querypagamento.getFloat("valorpago"));      //instancia novo pagamento
+						pagamentos.add(pagamento);
+						p.setPagamentos(pagamentos); //correlaciona os pagamentos
+					}
 				
 				resultado.add(p);
 			}
