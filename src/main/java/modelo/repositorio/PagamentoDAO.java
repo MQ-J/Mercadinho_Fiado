@@ -48,4 +48,29 @@ public class PagamentoDAO extends FabricaConexao {
 		return resultado;
 	}
 
+	public int novoPagamento(int idcompra, Float valor) {
+		
+		int rs = 0;
+		
+		try
+		{
+			String stmt = "insert into pagamentos (data, valorpago, id) values (now(), ?, ?)";
+			
+			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
+
+            pStmt.setFloat(1, valor);
+			pStmt.setInt(2, idcompra);
+
+			rs = pStmt.executeUpdate();
+			
+			super.fecharConexao();
+		}
+		catch (Exception e)
+		{
+			System.out.println("Erro ao tentar criar este Pagamento. " + e.getMessage());
+		}
+		
+		return rs;
+	}
+
 }
