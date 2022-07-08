@@ -6,6 +6,17 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+	<!-- botão que ativa modal novo cliente -->
+	<div class="position-relative w-50 mx-auto mt-5">
+		<button 
+			type="button" 
+			class="btn btn-success rounded-circle position-absolute bottom-0 end-0" 
+			data-bs-toggle="modal" 
+			data-bs-target="#newClient">
+			+
+		</button>
+	</div>
+
 	<!-- lista de clientes -->
 	<ul class="list-group w-50 mx-auto mt-5">
 		<c:forEach items="${clientes}" var="clientes">
@@ -25,17 +36,6 @@
 			</li>
 		</c:forEach>
 	</ul>
-
-	<!-- botão que ativa modal novo cliente -->
-	<div class="position-relative w-50 mx-auto mt-5">
-		<button 
-			type="button" 
-			class="btn btn-success rounded-circle position-absolute bottom-0 end-0" 
-			data-bs-toggle="modal" 
-			data-bs-target="#newClient">
-			+
-		</button>
-	</div>
   
 	<!-- Modal novo cliente -->
 	<div class="modal fade" id="newClient" tabindex="-1" aria-labelledby="modal de novo cliente" aria-hidden="true">

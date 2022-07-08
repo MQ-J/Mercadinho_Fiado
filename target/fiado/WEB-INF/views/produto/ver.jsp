@@ -7,17 +7,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
-		
-	<ul class="list-group w-50 mx-auto mt-5">
-		<c:forEach items="${produtos}" var="produtos">
-			<li class="list-group-item d-flex justify-content-between align-items-center">
-				<c:out value=" ${produtos.nome}"/>
-				<span class="badge bg-success rounded-pill"><c:out value="${produtos.id}"/></span>
-				<span class="badge bg-primary rounded-pill">R$ <c:out value="${produtos.valor}"/></span>
-			</li>
-		</c:forEach>
-	</ul>
-
 	<!-- botão que ativa modal novo produto -->
 	<div class="position-relative w-50 mx-auto mt-5">
 		<button 
@@ -28,6 +17,16 @@
 			+
 		</button>
 	</div>
+		
+	<ul class="list-group w-50 mx-auto mt-5">
+		<c:forEach items="${produtos}" var="produtos">
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+				<c:out value=" ${produtos.nome}"/>
+				<span class="badge bg-success rounded-pill"><c:out value="${produtos.id}"/></span>
+				<span class="badge bg-primary rounded-pill">R$ <c:out value="${produtos.valor}"/></span>
+			</li>
+		</c:forEach>
+	</ul>
   
 	<!-- Modal novo produto -->
 	<div class="modal fade" id="newProduto" tabindex="-1" aria-labelledby="modal de novo produto" aria-hidden="true">

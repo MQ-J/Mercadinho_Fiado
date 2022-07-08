@@ -7,7 +7,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 	<!-- botão que ativa modal nova pagamento -->
-	<div class="position-relative w-50 mx-auto mt-5 mb-3">
+	<div class="position-relative w-50 mx-auto mt-5">
 		<button 
 			type="button" 
 			class="btn btn-success rounded-circle  position-absolute bottom-0 end-0" 
