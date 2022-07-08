@@ -27,7 +27,15 @@
 					<p><c:out value=" ${compras.cliente.nome}"/></p>
 					<p><c:out value=" ${compras.dataCompra}"/></p>
 				</h5>
-				<p class="badge bg-primary rounded-pill">Valor pendente: <c:out value=" ${compras.valorPendente}"/></p>
+
+				<c:choose>
+					<c:when test="${compras.valorPendente == 0 && compras.pagamentos!=null}">
+						<p class="badge bg-success rounded-pill">OK</p>
+					</c:when>
+					<c:otherwise>
+						<p class="badge bg-primary rounded-pill">Valor pendente: <c:out value=" ${compras.valorPendente}"/></p>
+					</c:otherwise>
+				</c:choose>
 				
 				<c:forEach items="${compras.produtos}" var="produtos">
 					<p><c:out value=" ${produtos.nome}"/> - R$ <c:out value="${produtos.valor}"/></p>
