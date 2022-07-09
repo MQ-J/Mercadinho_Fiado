@@ -39,6 +39,41 @@
 					</a>
 				</div>
 			</li>
+
+			<!-- Modal editar cliente -->
+			<div class="modal fade" id="editaCliente${clientes.cpf}" tabindex="-1" aria-labelledby="modal de novo cliente" aria-hidden="true">
+				<div class="modal-dialog">
+				<div class="modal-content">
+
+					<div class="modal-header">
+					<h5 class="modal-title">Editar Cliente</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+
+					<div class="modal-body">
+						<form action="/fiado/clientes/altera" method="post">
+							<div class="mb-3">
+								<label for="nome" class="form-label">Nome</label>
+								<input type="text" class="form-control" id="nome" name="nome" value="${clientes.nome}">
+							</div>
+							
+							<input type="text" class="form-control" id="cpf" name="cpf" pattern="[0-9]{11}" value="${clientes.cpf}" hidden>
+
+							<div class="mb-3">
+								<label for="phone" class="form-label">Telefone</label>
+								<input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{11}" value="${clientes.telefone}">
+							</div>
+
+							<button type="submit" class="btn btn-success">Submit</button>
+						</form>
+					</div>
+
+					<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					</div>
+				</div>
+				</div>
+			</div>
 		</c:forEach>
 	</ul>
   

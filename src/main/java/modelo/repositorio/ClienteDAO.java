@@ -68,4 +68,54 @@ public class ClienteDAO extends FabricaConexao {
 		return rs;
 	}
 
+	public int ApagarClientes(String cpf) {
+		
+		int rs = 0;
+		
+		try
+		{
+			String stmt = "delete from clientes where cpf=?";
+			
+			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
+
+			pStmt.setString(1, cpf);
+
+			rs = pStmt.executeUpdate();
+			
+			super.fecharConexao();
+		}
+		catch (Exception e)
+		{
+			System.out.println("Erro ao tentar apagar este Cliente. " + e.getMessage());
+		}
+		
+		return rs;
+	}
+
+	public int EditarClientes(String nome, String cpf, String telefone) {
+		
+		int rs = 0;
+		
+		try
+		{
+			String stmt = "update clientes set nome=?, telefone=? where cpf=?";
+			
+			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
+
+			pStmt.setString(1, nome);
+            pStmt.setString(2, telefone);
+			pStmt.setString(3, cpf);
+
+			rs = pStmt.executeUpdate();
+			
+			super.fecharConexao();
+		}
+		catch (Exception e)
+		{
+			System.out.println("Erro ao tentar editar este Cliente. " + e.getMessage());
+		}
+		
+		return rs;
+	}
+
 }
