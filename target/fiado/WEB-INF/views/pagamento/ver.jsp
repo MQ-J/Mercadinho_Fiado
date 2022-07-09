@@ -4,6 +4,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<%@ page import="java.time.format.DateTimeFormatter" %>
+<% pageContext.setAttribute("localDateTimeFormat", DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")); %>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 	<!-- botão que ativa modal nova pagamento -->
@@ -20,8 +23,15 @@
 	<ul class="list-group w-50 mx-auto mt-5">
 		<c:forEach items="${pagamentos}" var="pagamentos">
 			<li class="list-group-item d-flex justify-content-between align-items-center">
-				<c:out value=" ${pagamentos.valorPago}"/><br>
-				<c:out value=" ${pagamentos.dataPagto}"/>
+				
+				<p>R$ <c:out value=" ${pagamentos.valorPago}"/></p>
+
+				<c:forEach items="${pagamentos.compras}" var="compras">
+					<p> Compra: <c:out value=" ${compras.idCompra}"/></p>
+				</c:forEach>
+
+				<p><c:out value=" ${localDateTimeFormat.format(pagamentos.dataPagto)}"/></p>
+				
 
 				<div class="d-flex gap-3">
 					<a type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editaPagamento${pagamentos.dataPagto}"> <!-- USA O ID DO PAGAMENTO MANO -->

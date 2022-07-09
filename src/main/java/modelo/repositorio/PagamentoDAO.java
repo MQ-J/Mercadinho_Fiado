@@ -15,8 +15,6 @@ public class PagamentoDAO extends FabricaConexao {
     public ArrayList<Pagamento> recuperarPagamentos() {
 
 		ArrayList<Pagamento> resultado = null;
-
-		ArrayList<Compra> compras = null;
 		
 		try
 		{
@@ -25,7 +23,7 @@ public class PagamentoDAO extends FabricaConexao {
 			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
 			ResultSet rs = pStmt.executeQuery();
 			resultado = new ArrayList<Pagamento>();
-			
+
 			while(rs.next()) {
 				Pagamento p = new Pagamento();
 
@@ -33,7 +31,11 @@ public class PagamentoDAO extends FabricaConexao {
                 p.setDataPagto(date);
                 p.setValorPago(rs.getFloat("valorpago"));
 
-                p.setCompras(compras); //usar o campo id para pesquisar compra
+				ArrayList<Compra> compras = new ArrayList<Compra>();
+				Compra c = new Compra();
+				c.setIdCompra(rs.getInt("id"));
+				compras.add(c);
+                p.setCompras(compras); //correlaciona compras usando Id
 				
 				resultado.add(p);
 			}
