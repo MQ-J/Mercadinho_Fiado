@@ -4,6 +4,7 @@ controlador/VerCompraServlet.class
 src/main/java/modelo/repositorio/PagamentoDAO.class
 src/main/java/modelo/repositorio/ProdutoDAO.class
 src/main/java/modelo/repositorio/CompraDAO.class
+controlador/AlterarCompraServlet.class
 src/main/java/modelo/Pagamento.class
 src/main/java/modelo/Cliente.class
 src/main/java/modelo/Produto.class

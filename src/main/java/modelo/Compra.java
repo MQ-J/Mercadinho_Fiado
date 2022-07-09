@@ -11,17 +11,19 @@ public class Compra {
 	protected ArrayList<Produto> produtos;
 	protected Cliente cliente;
 	protected ArrayList<Pagamento> pagamentos;
+	protected int idCompra;
 
 	/**
 	 * Método construtor da classe.
 	 */
 	public Compra(LocalDateTime dataCompra, Float valorPendente, ArrayList<Produto> produtos, 
-			Cliente cliente, ArrayList<Pagamento> pagamentos) {
+			Cliente cliente, ArrayList<Pagamento> pagamentos, int idCompra) {
 		this.dataCompra = dataCompra;
 		this.valorPendente = valorPendente;
 		this.produtos = produtos;
 		this.cliente = cliente;
 		this.pagamentos = pagamentos;
+		this.idCompra = idCompra;
 	}
 
 	public Compra() {}
@@ -67,4 +69,13 @@ public class Compra {
 	public void setPagamentos(ArrayList<Pagamento> pagamentos) {
 		this.pagamentos = pagamentos;
 	}
+
+	public int getIdCompra() {
+		return idCompra;
+	}
+
+	public void setIdCompra(int idCompra) {
+		this.idCompra = idCompra;
+	}
+
 }

@@ -20,7 +20,7 @@ public class CompraDAO extends FabricaConexao {
 		
 		try
 		{
-			String stmt = "SELECT data, valorpendente, nome, idproduto, idcompra FROM compras c INNER JOIN clientes p ON p.cpf = c.cpfcliente";
+			String stmt = "SELECT data, valorpendente, nome, idproduto, idcompra, cpf FROM compras c INNER JOIN clientes p ON p.cpf = c.cpfcliente";
 			
 			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
 			ResultSet rs = pStmt.executeQuery();
@@ -32,9 +32,10 @@ public class CompraDAO extends FabricaConexao {
                 LocalDateTime date = rs.getTimestamp("data").toLocalDateTime();
                 p.setDataCompra(date);                                          //coloca a data e o valor pendente na compra
                 p.setValorPendente(rs.getFloat("valorpendente"));
+				p.setIdCompra(rs.getInt("idcompra"));
 
 				/*PRODUTO*/
-					String PROD = "select nome, valor from produtos where id=?";
+					String PROD = "select nome, valor, id from produtos where id=?";
 					PreparedStatement getPROD = super.abrirConexao().prepareStatement(PROD);
 					getPROD.setInt(1, rs.getInt("idproduto"));
 					ResultSet queryproduto = getPROD.executeQuery();                  //pesquisa o produto usando o idproduto
@@ -44,6 +45,7 @@ public class CompraDAO extends FabricaConexao {
 					while(queryproduto.next()) {
 						Produto produto = new Produto();
 						produto.setNome(queryproduto.getString("nome"));
+						produto.setid(queryproduto.getInt("id"));
 						produto.setValor(queryproduto.getFloat("valor"));      //instancia novo produto
 						produtos.add(produto);
 						p.setProdutos(produtos); //correlaciona produto
@@ -51,7 +53,8 @@ public class CompraDAO extends FabricaConexao {
 
 				/*CLIENTE*/
 				Cliente cliente = new Cliente();
-				cliente.setNome(rs.getString("nome")); //correlaciona o cliente
+				cliente.setCpf(rs.getString("cpf")); //correlaciona o cliente
+				cliente.setNome(rs.getString("nome"));
                 p.setCliente(cliente);
 
 				/*PAGAMENTOS*/
@@ -104,6 +107,57 @@ public class CompraDAO extends FabricaConexao {
 		catch (Exception e)
 		{
 			System.out.println("Erro ao tentar criar esta Compra. " + e.getMessage());
+		}
+		
+		return rs;
+	}
+
+	public int ApagarCompras(int id) {
+		
+		int rs = 0;
+		
+		try
+		{
+			String stmt = "delete from compras where idcompra=?";
+			
+			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
+
+			pStmt.setInt(1, id);
+
+			rs = pStmt.executeUpdate();
+			
+			super.fecharConexao();
+		}
+		catch (Exception e)
+		{
+			System.out.println("Erro ao tentar apagar esta Compra. " + e.getMessage());
+		}
+		
+		return rs;
+	}
+
+	public int EditarCompras(String cpf, Float valor, int idProd, int id) {
+		
+		int rs = 0;
+		
+		try
+		{
+			String stmt = "update compras set cpfcliente=?, valorpendente=?, idproduto=? where idcompra=?";
+			
+			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
+
+			pStmt.setString(1, cpf);
+            pStmt.setFloat(2, valor);
+			pStmt.setInt(3, idProd);
+			pStmt.setInt(4, id);
+
+			rs = pStmt.executeUpdate();
+			
+			super.fecharConexao();
+		}
+		catch (Exception e)
+		{
+			System.out.println("Erro ao tentar editar esta Compra. " + e.getMessage());
 		}
 		
 		return rs;
