@@ -75,4 +75,57 @@ public class PagamentoDAO extends FabricaConexao {
 		return rs;
 	}
 
+	public int ApagarPagamentos(int id, Float valor) {
+		
+		int rs = 0;
+		
+		try
+		{
+			String stmt = "DELETE FROM pagamentos WHERE ctid IN ( SELECT ctid FROM pagamentos Where id=? and valorpago=? LIMIT 1)";
+			
+			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
+
+			pStmt.setInt(1, id);
+			pStmt.setFloat(2, valor);
+
+			rs = pStmt.executeUpdate();
+			
+			super.fecharConexao();
+		}
+		catch (Exception e)
+		{
+			System.out.println("Erro ao tentar apagar este Pagamento. " + e.getMessage());
+		}
+		
+		return rs;
+	}
+
+	public int EditarPagamentos(Float valor, int id, int idOld, Float valorOld) {
+		
+		int rs = 0;
+		
+		try
+		{
+			String stmt = "update pagamentos set valorpago=?, id=? WHERE ctid IN ( SELECT ctid FROM pagamentos Where id=? and valorpago=? LIMIT 1)";
+			
+			PreparedStatement pStmt = super.abrirConexao().prepareStatement(stmt);
+
+            pStmt.setFloat(1, valor);
+			pStmt.setInt(2, id);
+
+			pStmt.setInt(3, idOld);
+			pStmt.setFloat(4, valorOld);
+
+			rs = pStmt.executeUpdate();
+			
+			super.fecharConexao();
+		}
+		catch (Exception e)
+		{
+			System.out.println("Erro ao tentar editar este Pagamento. " + e.getMessage());
+		}
+		
+		return rs;
+	}
+
 }
