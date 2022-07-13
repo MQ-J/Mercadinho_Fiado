@@ -1,6 +1,6 @@
-## PODE SER UTIL
-- Timestamp.valueOf(LocalDateTime.now())
-
+## Deploy no Heroku
+- baixar o **webapp-runner.jar** na marra e deixar no root do projeto
+- configurar o path da sua página principal
 
 ## instalando Tomcat no codespaces
 https://code.visualstudio.com/docs/java/java-tomcat-jetty#_community-server-connectors
