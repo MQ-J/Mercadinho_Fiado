@@ -1,11 +1,17 @@
-## Deploy no Heroku
-- baixar o **webapp-runner.jar** na marra e deixar no root do projeto
-- configurar o path da sua página principal
+## Deploy no Heroku (projeto java web)
+- baixar o **webapp-runner.jar** na marra e deixar no root do projeto, pq meu maven não baixa ele 😡
+- criar arquivo chamado **Procfile** no root do projeto, e inserir nele, em uma mesma linha:
+  - **web:** (seu projeto é pra web né, pôe isso)
+  - **java $JAVA_OPTS** (se lá q isso kkk)
+  - **-jar webapp-runner.jar** (se ele não estiver no root, coloque as pastas tbm)
+  - **--port $PORT** (com isso o heroku define a porta automaticamente)
+  - **--path /fiado** (path da sua página principal, se a pasta aparece na url dela)
+  - **target/*.war** (local do arquivo .war)
 
 ## instalando Tomcat no codespaces
 https://code.visualstudio.com/docs/java/java-tomcat-jetty#_community-server-connectors
 
-## SERVELET tutorial (faça a rota da página referenciar uma classe do java)
+## SERVELET tutorial (como fazer a rota da url referenciar uma classe do java)
 https://www.brandondonnelson.com/2020/06/creating-java-web-app-servlet-in-visual.html
 
 ## Desenvolvendo o JSP
