@@ -13,19 +13,11 @@
   <url>https://fiado-lp2a2.herokuapp.com</url>
 
   <properties>
-    <java.version>11</java.version>
+    <java.version>17</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <tomcat.version>10.0.2</tomcat.version>
-    
-    <!-- Hibernate -->
-    <hibernate.version>5.2.16.Final</hibernate.version>
-    <hibernate-validator.version>6.0.8.Final</hibernate-validator.version>
-    <jsoup.version>1.11.3</jsoup.version>
-    <javax-el.version>3.0.1-b10</javax-el.version>
   </properties>
 
   <dependencies>
