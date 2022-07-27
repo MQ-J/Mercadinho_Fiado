@@ -5,16 +5,14 @@
 
   <groupId>br.edu.ifsp</groupId>
   <artifactId>fiado</artifactId>
-  <version>1</version>
-  <packaging>war</packaging>
+  <version>1.0</version>
 
   <name>fiado Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
-  <url>https://fiado-lp2a2.herokuapp.com</url>
 
   <properties>
     <java.version>11</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
     <tomcat.version>10.0.2</tomcat.version>
@@ -143,28 +141,4 @@
       </plugins>
     </pluginManagement>
   </build>
-
-
-  <dependencyManagement>
-  
-
-    <dependencies>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>1.5.8</version>
-      </dependency>
-
-    
-
-      <dependency>
-        <groupId>org.jboss.logging</groupId>
-        <artifactId>jboss-logging</artifactId>
-        <version>3.4.1.Final</version>
-      </dependency>
-
-    </dependencies>
-
-  </dependencyManagement>
 </project>
