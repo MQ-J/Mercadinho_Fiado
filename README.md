@@ -20,7 +20,7 @@ https://www.brandondonnelson.com/2020/06/creating-java-web-app-servlet-in-visual
 - espere o output
 - atualize a página (f5)
 
-## Controlando rotas
+## Controlando as rotas do site
 - adicionar o servlet no arquivo web.xml (relaciona classe java com rota do site)
 - na classe java, fazer o tratamento usando os modelos, e retornar uma página jsp (sua view)
 - na view, mostrar as coisas.
